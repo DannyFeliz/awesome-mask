@@ -23,14 +23,13 @@ var inputHandler = function inputHandler(ev) {
 
 exports.default = {
   bind: function bind(el, binding) {
-    console.log(binding.value);
     if (binding.value !== '') {
       el.dataset.mask = binding.value;
       el.setAttribute('maxlength', el.dataset.mask.length);
       el.addEventListener('keydown', inputHandler);
     }
   },
-  unbind: function unbind(el) {
+  unbind: function unbind(el, binding) {
     if (binding.value !== '') {
       el.removeAttribute('maxlength');
       el.removeEventListener('keydown', inputHandler);

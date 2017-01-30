@@ -16,14 +16,13 @@ let inputHandler = (ev) => {
 
 export default {
   bind (el, binding) {
-    console.log(binding.value)
     if(binding.value !== ''){
       el.dataset.mask = binding.value
       el.setAttribute('maxlength', el.dataset.mask.length)
       el.addEventListener('keydown', inputHandler)
     }
   },
-  unbind(el) {
+  unbind(el, binding) {
     if(binding.value !== ''){
       el.removeAttribute('maxlength')
       el.removeEventListener('keydown', inputHandler)
