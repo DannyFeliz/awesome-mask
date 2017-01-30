@@ -18,7 +18,9 @@ var inputHandler = function inputHandler(ev) {
   if (isCharacter && ev.target.value.length >= mask.length) {
     ev.preventDefault();
   }
-  ev.target.value = mask ? _vanillaMasker2.default.toPattern(ev.target.value, mask) : ev.target.value;
+  setTimeout(function () {
+    ev.target.value = mask ? _vanillaMasker2.default.toPattern(ev.target.value, mask) : ev.target.value;
+  }, 0);
 };
 
 exports.default = {
